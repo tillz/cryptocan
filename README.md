@@ -32,4 +32,3 @@ The CAN interfaces can be enabled using the following commands (assuming `can0` 
     ip link set up can0
     ip link set up can1
 ```
-# cryptocan
