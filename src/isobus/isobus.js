@@ -11,7 +11,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 /* 
 This program interprets isobus frames according to the PGN/SPN database, outputs them and logs them if requested.
-See `node isobus.js` to see help
+use `node isobus.js` to see help
 */
 var can = require('socketcan');
 const csv = require('csv-parser')

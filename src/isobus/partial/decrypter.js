@@ -7,6 +7,9 @@ This program is free software; you can redistribute it and/or modify it under th
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110, USA
+
+ISOBUS-selective Encryption. Execute with `node decrypter.js`. Encrypted rames are received on can0 and are sent to can1 after decryption.
+To enable CBC mode, which is highly recommended, execute this program with `node decrypter.js cbc` (the encrypter needs to have cbc enabled too)
 */
 let can = require('socketcan');
 let tea = require('../../can/inline/xxtea.js');
@@ -50,7 +53,7 @@ cipherChannel.start();
 
 function xor(a,b){
     if(a.length!=b.length){
-        throw "Length's don't match"
+        throw "Lengths don't match"
     }else{
         var n=Buffer.alloc(a.length);
         for(var i=0;i<n.length;i++)
